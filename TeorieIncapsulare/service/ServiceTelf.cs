@@ -67,16 +67,37 @@ namespace TeorieIncapsulare.service
             }
 
         }
-
-        public void sortareTelefonTip()
+        public void definireSisteme(String os)
         {
+            for(int i = 0; i < this.telefon.Count; i++)
+            {
+                if (os.ToLower().Equals("Android")&& telefon[i].marca.Equals("Samsung"))
+                {
+
+                    Console.WriteLine(this.telefon[i].DescriereTelf());
+
+                }
+          
+                else if (os.ToLower().Equals("ios") && telefon[i].marca.Equals("Iphone"))
+                {
+
+                    Console.WriteLine(this.telefon[i].DescriereTelf());
+                }
+
+            }   
+          
+        }
+        public void  afisareDupaMarca(String marca)
+        {
+           
             for (int i = 0; i < this.telefon.Count; i++)
             {
-                if (telefon[i].marca.CompareTo("Samsung") > 0)
+                if (telefon[i].marca.Equals(marca))
                 {
                     Console.WriteLine(telefon[i].DescriereTelf());
 
                 }
+               
             }
 
         } //case  1 nu merge
@@ -145,7 +166,7 @@ namespace TeorieIncapsulare.service
         {
             for (int i = 0; i < telefon.Count; i++)
             {
-                if (telefon[i].probTehn.CompareTo("Functionabil") > 0)
+                if (telefon[i].probTehn.CompareTo("Defect") > 0)
                 {
 
                     Console.WriteLine(telefon[i].DescriereTelf() + "\n");
@@ -158,7 +179,7 @@ namespace TeorieIncapsulare.service
 
 
 
-        }
+        }//in loc de cele defecte imi apare cele functionabile
 
 
 

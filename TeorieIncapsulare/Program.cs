@@ -13,10 +13,11 @@ internal class Program
        //ViewMasina masina = new ViewMasina();
        // masina.play();
        ViewTelf telefon= new ViewTelf();
-
         telefon.play();
-
+        //telefon.play();
+       // ViewBloc Bloc = new ViewBloc();
         
+      // Bloc.play();        
 
        
 

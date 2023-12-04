@@ -33,7 +33,8 @@ namespace TeorieIncapsulare.view
                 switch (adaugare)
                 {
                     case 1:
-                        this.servicetelefon.sortareTelefonTip();
+
+                        afisaretelefonSistem();
                         break;
                     case 2:
                         this.servicetelefon.sortareTelefonAn();
@@ -59,8 +60,17 @@ namespace TeorieIncapsulare.view
 
         public void afisaretelefonSistem()
         {
+
+            Console.WriteLine("Introduceti ce doriti: "+"\n");
+
+            string marca = Console.ReadLine();
+
+            Telefon telf = new Telefon();
+            telf.marca = marca;
+
             Console.WriteLine("Telefoanele au urmatoarele sisteme: "+"\n");
-            this.servicetelefon.sortareTelefonTip();
+
+            servicetelefon.definireSisteme(marca);
 
 
         }
@@ -74,7 +84,7 @@ namespace TeorieIncapsulare.view
         }
         public void EliminareaTelf()
         {
-            Console.WriteLine("Introduceti anul a masinei care doriti sa stergeti: ");
+            Console.WriteLine("Introduceti datele: ");
 
             string utilizator = Console.ReadLine();
 
@@ -85,7 +95,7 @@ namespace TeorieIncapsulare.view
 
             this.servicetelefon.ElimiTelefon(utilizator);
 
-            Console.WriteLine("Masiniile ramase dupa stergerea: ");
+            Console.WriteLine("TELEFOANELE RAMASE: ");
             this.servicetelefon.afisare();
 
         }
