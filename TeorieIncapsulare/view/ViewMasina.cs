@@ -129,7 +129,7 @@ namespace TeorieIncapsulare.view
             this.serviceMasina.stergeremasina(an);
 
             Console.WriteLine("Masiniile ramase dupa stergerea: ");
-            this.serviceMasina.afisare();
+            serviceMasina.afisare();
 
         }
 

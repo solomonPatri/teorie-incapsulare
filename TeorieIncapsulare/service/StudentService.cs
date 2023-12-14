@@ -119,5 +119,15 @@ namespace TeorieIncapsulare.service
             return suma / students.Count;
         }
 
+       public void stergereStudent(String name)
+        {
+            
+            Student student= findStudentByName(name);
+
+            students.Remove(student);
+
+
+        }
+
     }
 }

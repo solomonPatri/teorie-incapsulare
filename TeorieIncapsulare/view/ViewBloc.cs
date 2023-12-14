@@ -19,6 +19,7 @@ namespace TeorieIncapsulare.view
             Console.WriteLine("2-> Apartamentele care traiesc perechi de persone:  " + "\n");
             Console.WriteLine("3-> Introduceti Chirie/Propietar: " + "\n");
             Console.WriteLine("4-> Totalul de persoane in bloc: " + "\n");
+            Console.WriteLine("5-> Introduceti propietar pentru eliminare: " + "\n");
            
 
         }
@@ -45,7 +46,9 @@ namespace TeorieIncapsulare.view
                     case 4:
                        afisareTotal();
                         break;
-                   
+                    case 5:
+                        stergereapartament();
+                        break;
                 }
             }
 
@@ -71,7 +74,15 @@ namespace TeorieIncapsulare.view
 
         }
 
+        public void stergereapartament()
+        {
+            Console.WriteLine("Introduceti Chirie/Propietar: ");
+            string locuinta = Console.ReadLine();
+            serviceblocul.stergere(locuinta);
+            serviceblocul.afisare();
 
+
+        }
 
 
 

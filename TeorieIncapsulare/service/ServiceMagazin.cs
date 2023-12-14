@@ -33,9 +33,9 @@ namespace TeorieIncapsulare.service
             m3.salariul = 1600;
 
 
-            this.market.Add(m1);
-            this.market.Add(m2);
-            this.market.Add(m3);
+            market.Add(m1);
+            market.Add(m2);
+            market.Add(m3);
             
 
         }
@@ -83,11 +83,11 @@ namespace TeorieIncapsulare.service
 
         }
 
-        public void EliminareMagazin()
+        public void EliminareMagazin(string nume)
         {
             for (int i = 0; i < market.Count; i++)
             {
-                if (market[i].salariul<=1500)
+                if (market[i].magazin.Equals(nume))
                 {
                     market.RemoveAt(i);
 
@@ -129,6 +129,8 @@ namespace TeorieIncapsulare.service
             this.market.Add(Magazin);
 
         }
+
+        
 
 
 

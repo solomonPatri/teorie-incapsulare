@@ -91,6 +91,21 @@ namespace TeorieIncapsulare.service
             }
         }
 
+        public void stergere(string locuinta)
+        {
+            for (int i = 0; i < blocul.Count; i++)
+            {
+                if (blocul[i].locuinta.Equals(locuinta))
+                {
+
+                    blocul.RemoveAt(i);
+                }
+
+
+            }
+
+                
+        }
 
 
 

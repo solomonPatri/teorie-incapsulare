@@ -8,17 +8,16 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-       // ViewStudent student = new ViewStudent();
-       // student.play();
+        //ViewStudent student = new ViewStudent();
+        //student.play();
        //ViewMasina masina = new ViewMasina();
-       // masina.play();
-       ViewTelf telefon= new ViewTelf();
-        telefon.play();
-        //telefon.play();
-       // ViewBloc Bloc = new ViewBloc();
-        
-      // Bloc.play();        
-
+      //  masina.play();
+      //ViewTelf telefon= new ViewTelf();
+       //telefon.play();
+       //ViewBloc Bloc = new ViewBloc();
+      //Bloc.play();        
+       // ViewMagazin magazin = new ViewMagazin();
+       // magazin.play();
        
 
      

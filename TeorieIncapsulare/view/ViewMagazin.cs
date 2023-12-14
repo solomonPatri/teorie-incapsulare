@@ -22,6 +22,7 @@ namespace TeorieIncapsulare.view
             Console.WriteLine("2-> Magazinul cu cei mai multi angajati" + "\n");
             Console.WriteLine("3-> Doriti sa se deschida un magazin:  " + "\n");
             Console.WriteLine("4-> Doriti sa stergeti un magazin " + "\n");
+            Console.WriteLine("5-> Salariul cel mai mic: ");
 
 
 
@@ -49,7 +50,7 @@ namespace TeorieIncapsulare.view
                         adaugareMagazin();
                         break;
                     case 4:
-                        this.servicemagazin.EliminareMagazin();
+                        StergereaMagazin();
                         break;
 
                     default:
@@ -100,6 +101,22 @@ namespace TeorieIncapsulare.view
 
 
         }
+
+        public void StergereaMagazin()
+        {
+            Console.WriteLine("Introduceti numele magazinului: ");
+
+          string nume = Console.ReadLine();
+
+            servicemagazin.EliminareMagazin(nume);
+
+            Console.WriteLine("Magazinele ramase sunt: ");
+            servicemagazin.afisare();
+
+        }
+
+
+
 
     }
 }
