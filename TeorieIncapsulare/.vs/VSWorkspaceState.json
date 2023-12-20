@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\models",
+    "\\service",
+    "\\view"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\view\\ViewMasina.cs",
   "PreviewInSolutionExplorer": false
 }

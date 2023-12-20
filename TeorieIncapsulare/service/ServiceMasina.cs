@@ -10,53 +10,56 @@ namespace TeorieIncapsulare.service
 {
     public class ServiceMasina
     {
-        public List<Masina> car = new List<Masina>();
+        private List<Masina> _carList;
 
-        public void load()
+
+        public ServiceMasina()
         {
-            Masina m1 = new Masina();
-            m1.marca = "Dacia";
-            m1.model = "Sandero";
-            m1.an = 2013;
-            m1.culoare = "Neagra";
 
-            Masina m2 = new Masina();
-            m2.marca = "Seat";
-            m2.model = "Toledo";
-            m2.an = 2008;
-            m2.culoare = "Gri";
-
-            Masina m3 = new Masina();
-
-            m3.marca = "BMW";
-            m3.model = "X3";
-            m3.an = 2020;
-            m3.culoare = "Albastra";
-
-            this.car.Add(m1);
-            this.car.Add(m2);
-            this.car.Add(m3);
+            _carList=new List<Masina>();
+            this.Load();
         }
-        public void afisare()
+
+
+        
+
+
+
+        private void Load()
+        {
+            Masina m1 = new Masina("Dacia", "Sandero", 2013 ,"Neagra");
+            
+
+            Masina m2 = new Masina("Seat","Toledo",2008 ,"Gri");
+          
+            Masina m3 = new Masina("BMW","X3",2020,"Albastra");
+
+           
+
+            this._carList.Add(m1);
+            this._carList.Add(m2);
+            this._carList.Add(m3);
+        }
+        public void Afisare()
         {  
-            for(int i = 0; i < this.car.Count; i++)
+            for(int i = 0; i < this._carList.Count; i++)
             {
-                Console.Write(car[i].DescriereMasina());
+                Console.Write(_carList[i].DescriereMasina());
 
             }
 
         }
         public void Vechime()
         { 
-            for(int i = 0; i < this.car.Count; i++)
+            for(int i = 0; i < this._carList.Count; i++)
             {
-                if (car[i].an <= 2010)
+                if (_carList[i].An <= 2010)
                 {
-                    Console.WriteLine(car[i].marca+ " anul: " + car[i].an+" este vechie.");
+                    Console.WriteLine(_carList[i].Marca+ " anul: " + _carList[i].An+" este vechie.");
                 }
                 else
                 {
-                    Console.WriteLine(car[i].marca+" "+"Masina nu este vechie.");
+                    Console.WriteLine(_carList[i].Marca+" "+"Masina nu este vechie.");
                 }
 
             }
@@ -64,27 +67,27 @@ namespace TeorieIncapsulare.service
 
         }
         public Masina findCarByColor(string culoare){
-            for(int i = 0; i < car.Count; i++)
+            for(int i = 0; i <_carList.Count; i++)
             {
-                if (car[i].culoare.Equals(culoare)){
+                if (_carList[i].Culoare.Equals(culoare)){
 
                 Console.WriteLine("Masina se regaseste in lista si este: " + "\n");
 
-                 Console.WriteLine(car[i].DescriereMasina());
+                 Console.WriteLine(_carList[i].DescriereMasina());
                 }
             }
             return null;
       
         }
 
-        public double sortarevechi()
+        public double Sortarevechi()
         {
-           int max = car[0].an;
-            for(int i=0; i < car.Count; i++)
+           int max = _carList[0].An;
+            for(int i=0; i < _carList.Count; i++)
             {
-                if (car[i].an > max)
+                if (_carList[i].An > max)
                 {
-                    max = car[i].an;
+                    max = _carList[i].An;
                     
                 }
                
@@ -95,17 +98,17 @@ namespace TeorieIncapsulare.service
 
         public void AddMasina(Masina masina)
         {
-            this.car.Add(masina);
+            this._carList.Add(masina);
 
         }
 
-        public void stergeremasina(int an)
+        public void Stergeremasina(int an)
         {
-            for (int i = 0; i < car.Count; i++)
+            for (int i = 0; i < _carList.Count; i++)
             {
-                if (car[i].an.CompareTo(an)>0)
+                if (_carList[i].An.CompareTo(an)>0)
                 {
-                    car.RemoveAt(i);
+                    _carList.RemoveAt(i);
 
                 }
             }

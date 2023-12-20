@@ -8,10 +8,37 @@ namespace TeorieIncapsulare.models
 {
     public class Magazin
     {
-        public string magazin;
-        public string oras;
-        public int nrangajat;
-        public int salariul;
+        private string _magazin;
+        private string _oras;
+        private int _nrangajat;
+        private int _salariul;
+
+
+        public string Magazin
+        {
+            get { return _magazin; }
+            set { _magazin = value; }
+
+        }
+        public string Oras
+        {
+            get { return _oras; }
+            set { _oras = value; }
+        }
+        public int NrANgajati
+        {
+            get { return _nrangajat; }
+            set { _nrangajat = value; }
+        }
+        public int Salariul
+        {
+            get { return _salariul; }
+            set { _salariul = value; }
+        }
+
+
+
+
 
         public string DescriereMagazin()
         {

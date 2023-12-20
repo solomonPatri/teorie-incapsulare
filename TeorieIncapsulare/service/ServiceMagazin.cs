@@ -14,11 +14,8 @@ namespace TeorieIncapsulare.service
 
         public void load()
         {
-            Magazin m1 = new Magazin();
-            m1.magazin = "Lidl";
-            m1.oras = "Sibiu";
-            m1.nrangajat = 2300;
-            m1.salariul= 1460;
+            Magazin m1 = new Magazin("Lidl","Sibiu",2023,2455);
+           
 
            Magazin m2 = new Magazin();
             m2.magazin = "Mega-Image";

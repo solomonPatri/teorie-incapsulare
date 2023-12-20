@@ -13,8 +13,17 @@ namespace TeorieIncapsulare.view
 {
     internal class ViewMasina
     {
-        public ServiceMasina serviceMasina = new ServiceMasina();
-        
+
+        private ServiceMasina _serviceMasina;
+
+       
+        public ViewMasina()
+        {
+            _serviceMasina = new ServiceMasina();
+
+            play();
+
+        }
 
         public void meniu()
         {
@@ -23,13 +32,13 @@ namespace TeorieIncapsulare.view
             Console.WriteLine("3-> Doriti o masina de o culoare? " + "\n");
             Console.WriteLine("4-> Doriti sa adaugati o masina: "+"\n");
             Console.WriteLine("5-> Doriti sa stergeti o masina? "+"\n");
-
+         
 
 
         }
         public void play()
         {
-            this.serviceMasina.load();
+           
             bool run = true;
             while (run)
             {
@@ -41,21 +50,23 @@ namespace TeorieIncapsulare.view
                 {
 
                     case 1:
-                        this.serviceMasina.afisare();
+                        this._serviceMasina.Afisare();
                         break;
                     case 2:
-                        this.serviceMasina.Vechime();
+                        this._serviceMasina.Vechime();
                         break;
                     case 3:
-                        findCarByColor();
+                        FindCarByColor();
                         break;
                     case 4:
-                        adaugareMasina();
+                        AdaugareMasina();
                         break;
 
                     case 5:
-                        stergereMasina();
+                        StergereMasina();
                         break;
+                       
+                           
                     default:
                         Console.WriteLine("Algere gresita: ");
                         break;
@@ -69,7 +80,7 @@ namespace TeorieIncapsulare.view
 
 
         }
-        public void adaugareMasina()
+        public void AdaugareMasina()
         {
 
             Console.WriteLine("Introduceti Marca masini: ");
@@ -94,18 +105,18 @@ namespace TeorieIncapsulare.view
 
             Masina masina = new Masina();
 
-            masina.marca = marca;
-            masina.model = model;
-            masina.an = an;
-            masina.culoare = culoare;
+            masina.Marca = marca;
+            masina.Model = model;
+            masina.An = an;
+            masina.Culoare = culoare;
 
 
-            Masina cautat = serviceMasina.findCarByColor(culoare);
+            Masina cautat = _serviceMasina.findCarByColor(culoare);
 
             if (cautat == null) { 
     
 
-                serviceMasina.AddMasina(masina);
+                _serviceMasina.AddMasina(masina);
 
                 Console.WriteLine("Masina a fost adaugat cu succes");
             }else{
@@ -115,7 +126,7 @@ namespace TeorieIncapsulare.view
 
 
         }
-        public void stergereMasina()
+        public void StergereMasina()
         {
             Console.WriteLine("Introduceti anul a masinei care doriti sa stergeti: ");
 
@@ -124,20 +135,20 @@ namespace TeorieIncapsulare.view
 
             Masina mas = new Masina();
 
-            mas.an = an;
+            mas.An = an;
 
-            this.serviceMasina.stergeremasina(an);
+            this._serviceMasina.Stergeremasina(an);
 
             Console.WriteLine("Masiniile ramase dupa stergerea: ");
-            serviceMasina.afisare();
+            _serviceMasina.Afisare();
 
         }
 
-        public void findCarByColor()
+        public void FindCarByColor()
         {
             Console.WriteLine("Introduceti culoarea masini:  ");
             string culoare = Console.ReadLine();
-            Masina mas = serviceMasina.findCarByColor(culoare);
+            Masina mas = _serviceMasina.findCarByColor(culoare);
             if (mas== null)
             { 
                 Console.WriteLine("Nu exista o masina cu culoarea aceasta: ");
@@ -145,18 +156,6 @@ namespace TeorieIncapsulare.view
             }
             
         } 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
